@@ -1,4 +1,8 @@
 <?php
 
-echo 'Hello world';
-echo 'test';
+// variable $
+
+$greeting = 'Hello';
+$name = 'Jin fa';
+
+echo $greeting. ' '. $name;
