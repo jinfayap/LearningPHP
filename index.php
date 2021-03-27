@@ -1,12 +1,9 @@
 <?php
 
-$task = [
-    'title' => 'Watch laracast',
-    'due' => 'today',
-    'assigned_to' => 'Jin fa',
-    'completed' => false // if($completed) {}
-]; // title, due, assigned_to, completed
+require 'functions.php';
 
-// die(var_dump($task));
+$animals = ['dogs', 'cats'];
+
+dd($animals);
 
 require 'index.view.php';
