@@ -15,12 +15,21 @@
 </head>
 
 <body>
-    <header>
+    <ul>
+    
+    <?php foreach($animals as $animal) :?>
+            <li><?= $animal?></li>
+    <?php endforeach ?>
 
-        <h1>
-        <?= $greeting;?>
-        </h1>
-    </header>
+
+    <!-- <?php
+    foreach($names as $name) {
+        echo "<li>$name</li>";
+    }
+    ?> -->
+    </ul>
+
+    
 </body>
 
 </html>
