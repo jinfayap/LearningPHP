@@ -1,18 +1,34 @@
 <?php
+// Todo application
 
-require 'functions.php';
+// Todo, Comment, User
 
-$animals = ['dogs', 'cats'];
+class Task {
 
-dd($animals);
+    public $description;
+    protected $completed = false;
 
-// if(enterNightClub(20)) {
-//     echo 'Proceed';
-// } else {
-//     echo 'You are not allowed';
-// }
+    public function __construct($description) {
+        //Atuomatically triggered on instantiation
+        $this->description = $description;
+    }
 
-enterNightClub(21);
-enterNightClub(20);
+    public function complete() {
+        $this->completed = true;
+    }
+
+    public function isComplete() {
+        return $this->completed;
+    }
+
+}
+
+$tasks = [
+    new Task ('Go to the store'),
+    new Task ('Finish my screen cast'),
+    new Task ('Learn laracast')
+];
+
+$tasks[0]->complete();
 
 require 'index.view.php';

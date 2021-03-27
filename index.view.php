@@ -9,6 +9,35 @@
 
 <body>
 
+    <!-- <ul>
+        <?php foreach($tasks as $task) : ?>
+            <li>
+                <?php if($task->isComplete()) :?>
+                    <del>
+                <?php endif; ?>
+
+                <?= $task->description ?>
+
+                <?php if($task->isComplete()) :?>
+                    </del>
+                <?php endif; ?>
+            </li>
+        <?php endforeach; ?>
+    </ul> -->
+    
+    <ul>
+        <?php foreach($tasks as $task) : ?>
+            <li>
+                <?php if($task->isComplete()) : ?>
+                    <del><?= $task->description ?></del>
+                <?php else : ?>
+                    <?= $task->description ?>
+                <?php endif; ?>
+            </li>
+
+        <?php endforeach; ?>
+    </ul>
+
 </body>
 
 </html>
