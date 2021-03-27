@@ -1,18 +1,13 @@
 <?php
 
 
-$person = [
-    'age' => 31,
-    'hair' => 'brown',
-    'career' => 'web developer'
-];
+$task = [
+    'title' => 'Watch laracast',
+    'due' => new DateTime(),
+    'assigned_to' => 'Jin fa',
+    'completed' => false
+]; // title, due, assigned_to, completed
 
-$person['name'] = 'Jin fa';
-
-// echo '<pre>';
-// die(var_dump($person));
-// echo '</pre>';
-
-unset ($person['age']);
+die(var_dump($task));
 
 require 'index.view.php';
