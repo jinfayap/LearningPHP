@@ -1,26 +1,5 @@
-<html lang="en">
+<?php
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-    header {
-        background: #e3e3e3;
-        padding: 2em;
-        text-align: center;
-    }
-    </style>
-</head>
+$greeting= 'Hello, World';
 
-<body>
-    <header>
-
-        <h1>
-        <?= "Hello, ". htmlspecialchars($_GET['name']);?>
-        </h1>
-    </header>
-</body>
-
-</html>
+require 'index.view.php';
