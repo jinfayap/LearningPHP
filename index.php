@@ -1,34 +1,17 @@
 <?php
-// Todo application
+require 'functions.php';
 
-// Todo, Comment, User
+require 'Task.php';
 
-class Task {
-
-    public $description;
-    protected $completed = false;
-
-    public function __construct($description) {
-        //Atuomatically triggered on instantiation
-        $this->description = $description;
-    }
-
-    public function complete() {
-        $this->completed = true;
-    }
-
-    public function isComplete() {
-        return $this->completed;
-    }
-
+try {
+    $pdo = new PDO('mysql:host=127.0.0.1;dbname=mytodo', 'root', '');
+} catch (PDOException $e) {
+    die($e->getMessage());
 }
 
-$tasks = [
-    new Task ('Go to the store'),
-    new Task ('Finish my screen cast'),
-    new Task ('Learn laracast')
-];
+$statement = $pdo->prepare('select * from todos');
+$statement->execute();
 
-$tasks[0]->complete();
+$tasks = $statement->fetchAll(PDO::FETCH_CLASS, 'Task');
 
 require 'index.view.php';
