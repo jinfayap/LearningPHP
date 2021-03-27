@@ -26,9 +26,27 @@
             <strong>Person Responsible: </strong> <?= $task['assigned_to'] ?>
         </li>
         <li>
-            <strong>Status: </strong> <?= $task['completed']? 'Complete': 'Incomplete' ?>
+            <!-- <strong>Status: </strong> <?= $task['completed']? 'Complete': 'Incomplete' ?> -->
             <!-- Tenary expression $task['completed']? 'Complete': 'Incomplete' -->
+
+            <strong>Status: </strong> 
+
+            <!-- <?php if($task['completed']) {
+                echo '&#9989;';
+            } else {
+                echo '&#x2718;';
+            }
+            ?> -->
+
+            <?php if($task['completed']) :?>
+                <span>&#9989;</span>
+            <?php else :?>
+                <span>&#x2718;</span>
+            <?php endif; ?>
+
+
         </li>
+
     </ul>
 </body>
 
