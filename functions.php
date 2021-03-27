@@ -6,10 +6,17 @@ function dd ($data) {
     echo '</pre>';
 }
 
-function enterNightClub($age) {
-    if ($age >= 21) {
-        echo 'Enter night club';
-    } else {
-        echo 'Not allowed, return home kid';
+function connectToDb() {
+    try {
+        return new PDO('mysql:host=127.0.0.1;dbname=mytodo', 'root', '');
+    } catch (PDOException $e) {
+        die($e->getMessage());
     }
+}
+
+function fetchAllTasks($pdo) {
+    $statement = $pdo->prepare('select * from todos');
+    $statement->execute();
+
+    return $statement->fetchAll(PDO::FETCH_CLASS, 'Task');
 }
