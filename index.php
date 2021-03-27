@@ -1,15 +1,18 @@
 <?php
 
-$animals = [
-    'Pig',
-    'Dog',
-    'Cat',
-    'Fish',
-    'Goat'
+
+$person = [
+    'age' => 31,
+    'hair' => 'brown',
+    'career' => 'web developer'
 ];
 
-// foreach ($names as $name) {
-//     echo $name. ',';
-// }
+$person['name'] = 'Jin fa';
+
+// echo '<pre>';
+// die(var_dump($person));
+// echo '</pre>';
+
+unset ($person['age']);
 
 require 'index.view.php';
